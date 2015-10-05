@@ -1,0 +1,21 @@
+@import 'libs/normalize';
+
+* {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.image, .curves {
+	float: left;
+	padding: 20px;
+}
+
+canvas {
+	position: relative;
+}
+
+.curves-select {
+	padding-bottom: 20px;
+}
