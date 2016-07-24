@@ -1,16 +1,16 @@
 {
-  "name": "vml-frontend-skeleton",
-  "version": "1.1.2",
+  "name": "curves.js",
+  "version": "1.2",
   "description": "",
   "main": "gulpfile.js",
   "repository": {
     "type": "git",
-    "url": "https://git.pride.gl/vml/vml-frontend-skeleton.git"
+    "url": "https://github.com/bartoszkrawczyk2/curves.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "VML PL Developers <pl.developers@vml.com>",
+  "author": "Bartosz Krawczyk <bartoszkrawczyk2@gmail.com>",
   "devDependencies": {
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-1": "^6.5.0",
