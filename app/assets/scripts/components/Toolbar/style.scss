@@ -1,0 +1,25 @@
+.toolbar {
+    padding: 8px;
+
+    .upload {
+        display: inline;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+
+        button {
+            position: relative;
+        }
+
+        input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            width: 200px;
+            height: 200px;
+            font-size: 200px;
+            cursor: pointer;
+        }
+    }
+}

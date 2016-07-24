@@ -1,9 +1,9 @@
 curves.js
 ==============================
 
-Color curves in javascript.  
+Photoshop-like color curves in javascript.
 
-Built with `RequireJS`, `React` and canvas for rendering.
+![screenshot](http://projects.bartoszkrawczyk.com/curves/curves.png "screenshot")
 
 Demo:
 --
@@ -11,7 +11,7 @@ Demo:
 [http://projects.bartoszkrawczyk.com/curves/](http://projects.bartoszkrawczyk.com/curves/)
 
 
-How to build and run locally:
+How to build :
 --
 
 
@@ -19,8 +19,7 @@ How to build and run locally:
 * Run `npm install` to download all dependencies
 
 ### Build:  
-* Run `gulp build` to build app to `build` folder
-* Run `gulp server` to run app on localhost
+* Run `gulp build` to build app to `web` folder
 
 ### Development:  
 * Run `gulp` to build, start localhost and watch files for changes

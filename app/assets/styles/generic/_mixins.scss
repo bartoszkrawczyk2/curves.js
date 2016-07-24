@@ -1,0 +1,76 @@
+@mixin font($group, $id:regular) {
+     @each $font in $font-stack{
+        @if($group == map-get($font, group) and $id == map-get($font, id)) {
+            font-family: map-get($font, font);
+            font-weight: map-get($font, weight);
+            font-style: map-get($font, style);
+        }
+    }
+}
+
+@mixin respond-to($media) {
+     @if $media == mobile{
+        @media only screen and (max-width: $screen-xs) {
+             @content;
+        }
+    }
+    @else if $media == tablet {
+         @media only screen and (max-width: $screen-sm){
+            @content;
+        }
+    }
+    @else if $media == desktop-small {
+         @media only screen and (max-width: $screen-md){
+            @content;
+        }
+    }
+    @else if $media == desktop {
+         @media only screen and (max-width: $screen-lg){
+            @content;
+        }
+    }
+    @else {
+         @media only screen and (max-width: $media){
+            @content;
+        }
+    }
+}
+
+@mixin placeholder {
+    ::-webkit-input-placeholder {@content}
+    :-moz-placeholder           {@content}
+    ::-moz-placeholder          {@content}
+    :-ms-input-placeholder      {@content}
+}
+
+//Transitions
+@mixin transition($args...) {
+    transition: $args;
+}
+
+//Transforms
+@mixin transform($transforms) {
+    transform: $transforms;
+}
+
+//Rotate
+@mixin rotate ($deg) {
+    @include transform(rotate(#{$deg}deg));
+}
+
+//Scale
+@mixin scale($scale) {
+    @include transform(scale($scale));
+}
+
+//Translate
+@mixin translate ($x, $y) {
+    @include transform(translate($x, $y));
+}
+
+@import "mixins/grid";
+@import "mixins/grid-framework";
+@import "mixins/clearfix";
+@import "mixins/center-block";
+@import "mixins/text-hide";
+@import "mixins/form-radio-checkbox";

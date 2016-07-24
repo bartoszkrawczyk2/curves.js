@@ -1,0 +1,14 @@
+// Set input type checkbox and radio mixin
+// input_ratio( typeName, width/height, borderRadius, inputBG, inputActiveBG, checkColor );
+@include input_ratio(checkbox,20px,0,#ccc,blue,white);
+@include input_ratio(radio,20px,2px,#ccc,blue,white);
+
+// HTML form
+// <label class="control control--checkbox">First checkbox
+//   <input type="checkbox" checked="checked"/>
+//   <div class="control__indicator"></div>
+// </label>
+// <label class="control control--radio">First checkbox
+//   <input type="radio" checked="checked"/>
+//   <div class="control__indicator"></div>
+// </label>

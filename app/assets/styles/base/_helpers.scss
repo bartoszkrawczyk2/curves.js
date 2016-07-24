@@ -1,0 +1,47 @@
+// .container {
+// 	@extend %wrapper;
+// }
+
+.cf,
+.clearfix,
+%cf,
+%clearfix {
+    *zoom: 1;
+
+    &:after,
+    &:before {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+%after,
+%before {
+    content: "";
+    display: block;
+}
+
+.left,
+%left {
+    float: left;
+}
+
+.right,
+%right {
+    float: right;
+}
+
+%no-select {
+	user-select: none;
+}
+
+// %wrapper {
+// 	margin: 0 auto;
+// 	max-width: #{$wrapper-width};
+// 	padding: 0;
+// 	width: 100%;
+// }

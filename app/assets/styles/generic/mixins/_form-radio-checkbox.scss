@@ -1,0 +1,88 @@
+@mixin input_ratio( $type, $inputWidth, $borderRadius, $bgColor, $bgColorChecked, $checkColor){
+
+  input[type=#{$type}] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    display: none;
+  }
+
+  .control {
+    position: relative;
+    padding-left: calc(#{$inputWidth} + 5px);
+    line-height: #{$inputWidth};
+    display: inline-block;
+    margin: 5px 0;
+    margin-right: 5px;
+
+    &__indicator {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: $inputWidth;
+      width: $inputWidth;
+      background: $bgColor;
+
+      &:after {
+        content: '';
+        position: absolute;
+        display: none;
+        top: 50%;
+        left: 50%;
+      }
+    }
+
+    @if #{$type} == 'radio' {
+      &--radio .control__indicator {
+        border-radius: 50%;
+
+        &:after {
+          background: $checkColor;
+          width: 45%;
+          height: 45%;
+          border-radius: 50%;
+          transform: translate(-50%,-50%);
+        }
+      }
+    }
+
+    @if #{$type} == 'checkbox' {
+      &--checkbox .control__indicator {
+        border-radius: $borderRadius;
+
+        &:after {
+          width: 65%;
+          height: 40%;
+          border-width: 3px 3px 0 0;
+          border-style: solid;
+          border-color: $checkColor;
+          transform: translate(-50%,-75%) rotate(125deg);
+        }
+      }
+    }
+
+    &:hover input ~ .control__indicator,
+    input:focus ~ .control__indicator {
+      background: darken($bgColor, 5%);
+    }
+
+    input:checked ~ .control__indicator {
+      background: $bgColorChecked;
+
+      &:after {
+        display: block;
+      }
+    }
+
+    &:hover input:not([disabled]):checked ~ .control__indicator,
+    input:checked:focus ~ .control__indicator {
+      background: darken($bgColorChecked, 5%);
+    }
+
+    input:disabled ~ .control__indicator {
+      background: $bgColor;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+}
